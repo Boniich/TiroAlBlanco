@@ -1,5 +1,5 @@
 #include <iostream>
-#include "game/helpers/moveAcrossScreen/move_across_screen.h"
+#include "game/helpers/move_across_screen/move_across_screen.h"
 
 /*
  First version of game Tiro al blanco
