@@ -1,4 +1,5 @@
 #include <iostream>
+#include "game/helpers/moveAcrossScreen/move_across_screen.h"
 
 /*
  First version of game Tiro al blanco
@@ -7,5 +8,6 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    moveAcrossScreen(50, 50);
+    printf("*");
 }
