@@ -18,12 +18,12 @@
     <ClCompile Include="TiroAlBlanco.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="game\helpers\moveAcrossScreen\move_across_screen.cpp">
+    <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game\helpers\moveAcrossScreen\move_across_screen.h">
+    <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
