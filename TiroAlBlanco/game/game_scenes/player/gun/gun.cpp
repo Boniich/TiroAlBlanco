@@ -64,7 +64,10 @@ void cleanGunFromScreen(const Gun gun) {
     moveAcrossScreen(gun->x, gun->y - 1); printf("   ");
     moveAcrossScreen(gun->x + 1, gun->y - 1); printf("   ");
     //Mango
-    moveAcrossScreen(gun->x + 2, gun->y - 1); printf("   ");
+    moveAcrossScreen(gun->x + 2, gun->y - 1); printf("  ");
+                                              //printf("%c%c");
     //Aparte de atras, mango y culo del arma
-    moveAcrossScreen(gun->x, gun->y); printf("        ");
+  
+    moveAcrossScreen(gun->x, gun->y); printf("    ");
+                                      //printf("%c%c%c%c");
 }
