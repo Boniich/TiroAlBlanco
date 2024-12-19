@@ -5,12 +5,16 @@
 struct GunTDA {
 	int x;
 	int y;
+    int left_limit;
+    int right_limit;
 };
 
-Gun create(int x, int y) {
+Gun create(const int x, const int y, const int left_limit, const int righ_limit) {
 	GunTDA* gun = new GunTDA;
     gun->x = x;
     gun->y = y;
+    gun->left_limit = left_limit;
+    gun->right_limit = righ_limit;
 	return gun;
 }
 
@@ -27,7 +31,7 @@ void addAtInitialPosition(const Gun gun) {
 }
 void moveToLeft(const Gun gun) {
 
-    if (gun->x != 3) {
+    if (gun->x != gun->left_limit) {
         cleanGunFromScreen(gun);
 
         gun->x--;
@@ -46,7 +50,7 @@ void moveToLeft(const Gun gun) {
 }
 void moveToRight(const Gun gun) {
 
-    if (gun->x != 73) {
+    if (gun->x != gun->right_limit) {
         cleanGunFromScreen(gun);
         gun->x++;
         //Boca arma

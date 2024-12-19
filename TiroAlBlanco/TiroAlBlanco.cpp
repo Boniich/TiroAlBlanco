@@ -19,7 +19,7 @@ int main()
     //moveAcrossScreen(50, 50);
     //printf("*");
 
-    Gun gun = create(50, 19);
+    Gun gun = create(50, 19,3,73);
 
     addAtInitialPosition(gun);
 
