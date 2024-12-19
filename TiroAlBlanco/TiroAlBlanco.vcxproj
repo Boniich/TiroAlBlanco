@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game\game_scenes\limits\limits.cpp" />
+    <ClCompile Include="game\game_scenes\player\gun\gun.cpp" />
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
     <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp" />
     <ClCompile Include="TiroAlBlanco.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\game_scenes\limits\limits.h" />
+    <ClInclude Include="game\game_scenes\player\gun\gun.h" />
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h" />
   </ItemGroup>
