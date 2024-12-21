@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Windows.h>
 #include <conio.h>
 #include "game/helpers/move_across_screen/move_across_screen.h"
 #include "game/helpers/hide_cursor/hide_cursor.h"
@@ -19,11 +20,54 @@ int main()
     //moveAcrossScreen(50, 50);
     //printf("*");
 
+    // add the target to the game
+    moveAcrossScreen(50, 5); printf("%c%c%c%c",192,196,196,217);
+    moveAcrossScreen(50, 4); printf("%c%c%c%c", 218, 196,196, 191);
+
     Gun gun = create(50, 19,3,73);
 
     addAtInitialPosition(gun);
 
+    int x = 50;
+    bool move_to_right = true;
+    bool move_to_left = false;
+
     while (true) {
+
+        if (x > 2 && x < 74) {
+
+            if (x > 2 && move_to_right) {
+                moveAcrossScreen(x, 5); printf("    ");
+                moveAcrossScreen(x, 4); printf("    ");
+                x = x + 1;
+
+                moveAcrossScreen(x, 5); printf("%c%c%c%c", 192, 196, 196, 217);
+                moveAcrossScreen(x, 4); printf("%c%c%c%c", 218, 196, 196, 191);
+
+
+                if (x == 73) {
+                    move_to_right = false;
+                    move_to_left = true;
+                }
+            }
+       
+            if (x < 74 && move_to_left) {
+                moveAcrossScreen(x, 5); printf("    ");
+                moveAcrossScreen(x, 4); printf("    ");
+                x = x - 1;
+                moveAcrossScreen(x, 5); printf("%c%c%c%c", 192, 196, 196, 217);
+                moveAcrossScreen(x, 4); printf("%c%c%c%c", 218, 196, 196, 191);
+
+                if (x == 3) {
+                    move_to_right = true;
+                    move_to_left = false;
+                }
+            }
+            Sleep(35);
+        }
+
+
+       
 
         if (_kbhit()) {
             int key = _getch();
@@ -39,6 +83,7 @@ int main()
                     break;
                 case 77:
                     //se mueve para la derecha usando la flecha derecha
+
                     moveToRight(gun);
                     break;
                 default:
@@ -48,7 +93,7 @@ int main()
         }
     }
  
- 
+    Sleep(1000);
     std::cout << "" << std::endl;
     std::cout << "" << std::endl;
     std::cout << "" << std::endl;
