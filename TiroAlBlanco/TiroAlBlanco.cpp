@@ -19,19 +19,16 @@ int main()
  
     printLimits();
 
-    Target target = create(50.0f, 5, 4, false, true);
+    Target target = create(50.0f, 5, 4, true, 10.0f, 3.0f,73.0f);
     Gun gun = create(50, 19,3,73);
 
-    addAtInitialPosition(target);
+    printfTarget(target);
     addAtInitialPosition(gun);
 
 
     while (true) {
 
         moveTarget(target);
-      // Sleep(10);
-
-       
 
         if (_kbhit()) {
             int key = _getch();
