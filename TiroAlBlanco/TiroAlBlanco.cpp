@@ -19,7 +19,7 @@ int main()
  
     printLimits();
 
-    Target target = create(50, 5, 4, true, false);
+    Target target = create(50.0f, 5, 4, false, true);
     Gun gun = create(50, 19,3,73);
 
     addAtInitialPosition(target);
@@ -29,7 +29,7 @@ int main()
     while (true) {
 
         moveTarget(target);
-        Sleep(35);
+      // Sleep(10);
 
        
 
