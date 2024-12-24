@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game\game_scenes\limits\limits.cpp" />
+    <ClCompile Include="game\game_scenes\player\gun\bullet\bullet.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\gun.cpp" />
     <ClCompile Include="game\game_scenes\target\target.cpp" />
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\game_scenes\limits\limits.h" />
+    <ClInclude Include="game\game_scenes\player\gun\bullet\bullet.h" />
     <ClInclude Include="game\game_scenes\player\gun\gun.h" />
     <ClInclude Include="game\game_scenes\target\target.h" />
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />

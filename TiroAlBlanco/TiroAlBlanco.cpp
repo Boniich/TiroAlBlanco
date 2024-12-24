@@ -6,6 +6,7 @@
 #include "game/game_scenes/limits/limits.h"
 #include "game/game_scenes/player/gun/gun.h"
 #include "game/game_scenes/target/target.h"
+#include "game/game_scenes/player/gun/bullet/bullet.h"
 
 /*
  First version of game Tiro al blanco
@@ -22,11 +23,15 @@ int main()
     Target target = create(50.0f, 5, 4, true, 10.0f, 3.0f,73.0f);
     Gun gun = create(50, 19,3,73);
 
-    printfTarget(target);
-    addAtInitialPosition(gun);
+    //Test
+    Bullet stack = nullptr;
+    loadBullets(&stack,5);
+
+    //printfTarget(target);
+    //addAtInitialPosition(gun);
 
 
-    while (true) {
+    while (false) {
 
         moveTarget(target);
 
