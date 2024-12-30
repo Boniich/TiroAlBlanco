@@ -78,3 +78,10 @@ void cleanGunFromScreen(const Gun gun) {
 
         moveAcrossScreen(gun->x, gun->y); printf("    ");
 }
+
+int getX(const Gun gun) {
+    return gun->x;
+}
+int getY(const Gun gun) {
+    return gun->y;
+}

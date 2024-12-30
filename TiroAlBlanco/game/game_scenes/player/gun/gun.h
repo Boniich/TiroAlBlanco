@@ -8,3 +8,5 @@ void addAtInitialPosition(const Gun gun);
 void moveToLeft(const Gun gun);
 void moveToRight(const Gun gun);
 void cleanGunFromScreen(const Gun gun);
+int getX(const Gun gun);
+int getY(const Gun gun);

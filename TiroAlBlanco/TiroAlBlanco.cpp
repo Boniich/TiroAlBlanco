@@ -25,13 +25,14 @@ int main()
 
     //Test
     Bullet stack = nullptr;
+    Bullet used_bullets = nullptr;
     loadBullets(&stack,5);
 
-    //printfTarget(target);
-    //addAtInitialPosition(gun);
+    printfTarget(target);
+    addAtInitialPosition(gun);
 
 
-    while (false) {
+    while (true) {
 
         moveTarget(target);
 
@@ -56,22 +57,37 @@ int main()
                     break;
                 }
             }
+            else if (key == 'f') {
+                Bullet b = shootBullet(&stack, getX(gun) + 1, getY(gun) - 3);
+                recollectUsedBullet(&used_bullets, b);
+                
+            }
         }
+
+        moveBullet(used_bullets);
+
+        //while (used_bullets != nullptr) {
+        //    moveBullet(&used_bullets);
+        //    used_bullets
+        //}
+
+
+
     }
  
     Sleep(1000);
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
+    //std::cout << "" << std::endl;
 
     return 0;
 }
