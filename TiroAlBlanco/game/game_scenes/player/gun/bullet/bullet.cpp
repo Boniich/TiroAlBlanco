@@ -40,12 +40,25 @@ Bullet shootBullet(Bullet* stack, int x, int y)
 
 
 bool isStackEmpty(Bullet stack); // comprueba si la pila esta vacia
-void moveBullet(Bullet bullet) {
+void moveBullet(Bullet* bullet) {
 
 	
-	if (bullet != nullptr) {
-		moveAcrossScreen(bullet->x, bullet->y); printf("*");
+	if (*bullet != nullptr) {
 
+		if ((*bullet)->y > 4) {
+			moveAcrossScreen(50, 20); printf("%d", (*bullet)->y);
+			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
+			(*bullet)->y--;
+			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf("*");
+		}else{
+			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
+			Bullet temp = (*bullet);
+			(*bullet) = (*bullet)->next_bullet;
+
+			delete temp;
+			
+		}
+			
 		
 	}
 	

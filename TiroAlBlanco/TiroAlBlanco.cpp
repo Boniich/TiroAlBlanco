@@ -64,30 +64,11 @@ int main()
             }
         }
 
-        moveBullet(used_bullets);
-
-        //while (used_bullets != nullptr) {
-        //    moveBullet(&used_bullets);
-        //    used_bullets
-        //}
-
-
+        moveBullet(&used_bullets);
 
     }
  
     Sleep(1000);
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
-    //std::cout << "" << std::endl;
 
     return 0;
 }
