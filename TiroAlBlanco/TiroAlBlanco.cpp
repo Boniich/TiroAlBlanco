@@ -28,6 +28,8 @@ int main()
     Bullet used_bullets = nullptr;
     loadBullets(&stack,5);
 
+    moveAcrossScreen(10, 2); printf("%d",getAmountBullet(stack));
+
     printfTarget(target);
     addAtInitialPosition(gun);
 
@@ -38,6 +40,7 @@ int main()
 
         if (_kbhit()) {
             int key = _getch();
+            moveAcrossScreen(10, 0); printf("%d", key);
             if (key == 0 || key == 224) {
                 int second_key = _getch();
 
@@ -45,10 +48,12 @@ int main()
                 {
 
                 case 75:
+                   // moveAcrossScreen(10, 2); printf("Entro");
                     //se mueve para la izquierda usando la flecha izquierda
                     moveToLeft(gun);
                     break;
                 case 77:
+                    //moveAcrossScreen(10, 2); printf("Entro");
                     //se mueve para la derecha usando la flecha derecha
 
                     moveToRight(gun);
@@ -57,10 +62,20 @@ int main()
                     break;
                 }
             }
-            else if (key == 102) {
-                Bullet b = shootBullet(&stack, getX(gun) + 1, getY(gun) - 3);
-                recollectUsedBullet(&used_bullets, b);
-                
+            
+            
+            if (key == 102) {
+                //moveAcrossScreen(10, 0); printf("%d",key);
+                if (!isStackEmpty(stack)) {
+                    Bullet b = shootBullet(&stack, getX(gun) + 1, getY(gun) - 3);
+
+                    moveAcrossScreen(10, 2); printf("%d", getAmountBullet(stack));
+                    if (getAmountBullet(stack) == 0) {
+                        moveAcrossScreen(10, 2); printf("No hay mas balas");
+                    }
+
+                    recollectUsedBullet(&used_bullets, b);
+                }
             }
         }
 

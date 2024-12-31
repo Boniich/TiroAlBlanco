@@ -39,7 +39,14 @@ Bullet shootBullet(Bullet* stack, int x, int y)
 
 
 
-bool isStackEmpty(Bullet stack); // comprueba si la pila esta vacia
+bool isStackEmpty(Bullet stack) {
+
+	if (stack == nullptr) {
+		return true;
+	}
+	return false;
+
+}
 void moveBullet(Bullet* bullet) {
 	moveAcrossScreen(50, 20); printf("%d", (*bullet)->y);
 	moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
@@ -57,8 +64,15 @@ void destroyBullet(Bullet* bullet) {
 
 	delete temp;
 }
-int getAmountBullet(Bullet stack); // devuelve la cantidad de balas disponibles
-//bool isTargetImpact(Target target); /
+int getAmountBullet(Bullet stack) {
+	int counter = 0;
+
+	while (stack != nullptr) {
+		counter++;
+		stack = stack->next_bullet;
+	}
+	return counter;
+}
 
 void recollectUsedBullet(Bullet* list, Bullet bullet) {
 	
