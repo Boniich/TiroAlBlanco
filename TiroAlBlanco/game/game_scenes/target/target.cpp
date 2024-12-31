@@ -69,3 +69,10 @@ void cleanFromScreen(const Target target) {
 	moveAcrossScreen(static_cast<int>(target->x), target->y_top); printf("    ");
 	moveAcrossScreen(static_cast<int>(target->x), target->y_bottom); printf("    ");
 }
+
+int getX(const Target target) {
+	return static_cast<int>(target->x);
+}
+int getY(const Target target) {
+	return static_cast<int>(target->y_bottom);
+}

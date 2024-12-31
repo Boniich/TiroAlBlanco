@@ -34,7 +34,7 @@ int main()
 
     while (true) {
 
-        moveTarget(target);
+       moveTarget(target);
 
         if (_kbhit()) {
             int key = _getch();
@@ -57,14 +57,26 @@ int main()
                     break;
                 }
             }
-            else if (key == 'f') {
+            else if (key == 102) {
                 Bullet b = shootBullet(&stack, getX(gun) + 1, getY(gun) - 3);
                 recollectUsedBullet(&used_bullets, b);
                 
             }
         }
 
-        moveBullet(&used_bullets);
+        if (used_bullets != nullptr) {
+
+            if (isBulletOut(used_bullets)) {
+                moveBullet(&used_bullets);
+
+                isTargetImpact(used_bullets, target);
+            }
+            else {
+                destroyBullet(&used_bullets);
+            }
+            
+        }
+
 
     }
  

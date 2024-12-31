@@ -41,48 +41,22 @@ Bullet shootBullet(Bullet* stack, int x, int y)
 
 bool isStackEmpty(Bullet stack); // comprueba si la pila esta vacia
 void moveBullet(Bullet* bullet) {
-
-	
-	if (*bullet != nullptr) {
-
-		if ((*bullet)->y > 4) {
-			moveAcrossScreen(50, 20); printf("%d", (*bullet)->y);
-			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
-			(*bullet)->y--;
-			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf("*");
-		}else{
-			moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
-			Bullet temp = (*bullet);
-			(*bullet) = (*bullet)->next_bullet;
-
-			delete temp;
-			
-		}
-			
-		
-	}
-	
-	
-
-	//if (bullet != nullptr) {
-	//	Bullet* b = (Bullet*)bullet;
-
-	//	while (bullet->next_bullet != nullptr) {
-
-			//moveAcrossScreen((*b)->x, (*b)->y); printf(" ");
-			//(*b)->y--;
-			//moveAcrossScreen((*b)->x, (*b)->y); printf("*");
-
-			//bullet->next_bullet = bullet;
-		//}
-	//}
-
-	
-
-
+	moveAcrossScreen(50, 20); printf("%d", (*bullet)->y);
+	moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
+	(*bullet)->y--;
+	moveAcrossScreen((*bullet)->x, (*bullet)->y); printf("*");		
 }
-bool isBulletOut(Bullet stack); // comprueba si la bala paso al blanco
-void destroyBullet(Bullet stack); // destruye la bala cuando termina su proposito
+bool isBulletOut(Bullet bullet) {
+	if (bullet->y > 4) return true;
+	return false;
+}
+void destroyBullet(Bullet* bullet) {
+	moveAcrossScreen((*bullet)->x, (*bullet)->y); printf(" ");
+	Bullet temp = (*bullet);
+	(*bullet) = (*bullet)->next_bullet;
+
+	delete temp;
+}
 int getAmountBullet(Bullet stack); // devuelve la cantidad de balas disponibles
 //bool isTargetImpact(Target target); /
 
@@ -102,4 +76,15 @@ void recollectUsedBullet(Bullet* list, Bullet bullet) {
 
 
 
+}
+
+bool isTargetImpact(Bullet bullet, Target target) {
+
+	if ((bullet->x >= getX(target) && bullet->x < getX(target)+4) && getY(target) == bullet->y) {
+		moveAcrossScreen(50, 25); printf("               ");
+		moveAcrossScreen(50, 25); printf("hubo impacto");
+		return true;
+	}
+	moveAcrossScreen(50, 25); printf("NO hubo impacto");
+	return false;
 }

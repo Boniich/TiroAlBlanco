@@ -10,3 +10,5 @@ Target create(const float x, const int y_top, const int y_bottom,
 void printfTarget(const Target target);
 void moveTarget(const Target target);
 void cleanFromScreen(const Target target);
+int getX(const Target target);
+int getY(const Target target);
