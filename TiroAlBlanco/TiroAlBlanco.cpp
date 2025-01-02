@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include "game/helpers/move_across_screen/move_across_screen.h"
+#include "game/helpers/disable_mouse_input/disable_mouse_input.h"
 #include "game/helpers/hide_cursor/hide_cursor.h"
 #include "game/game_scenes/limits/limits.h"
 #include "game/game_scenes/player/gun/gun.h"
@@ -16,7 +17,7 @@
 int main()
 {
     hideCursor();
-
+    disableMouseInput();
  
     printLimits();
 

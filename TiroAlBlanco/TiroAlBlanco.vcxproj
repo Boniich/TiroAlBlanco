@@ -131,6 +131,7 @@
     <ClCompile Include="game\game_scenes\player\gun\bullet\bullet.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\gun.cpp" />
     <ClCompile Include="game\game_scenes\target\target.cpp" />
+    <ClCompile Include="game\helpers\disable_mouse_input\disable_mouse_input.cpp" />
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
     <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp" />
     <ClCompile Include="TiroAlBlanco.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="game\game_scenes\player\gun\bullet\bullet.h" />
     <ClInclude Include="game\game_scenes\player\gun\gun.h" />
     <ClInclude Include="game\game_scenes\target\target.h" />
+    <ClInclude Include="game\helpers\disable_mouse_input\disable_mouse_input.h" />
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h" />
   </ItemGroup>
