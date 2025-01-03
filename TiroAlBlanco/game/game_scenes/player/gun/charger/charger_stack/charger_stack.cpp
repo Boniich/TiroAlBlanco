@@ -1,7 +1,5 @@
 #include "charger_stack.h"
 #include "../bullet/bullet.h"
-#include "../../../../../helpers/move_across_screen/move_across_screen.h"
-#include <stdio.h>
 
 void loadBullets(Bullet* stack, const int amount)
 {
@@ -14,16 +12,7 @@ void loadBullets(Bullet* stack, const int amount)
 		addNextBullet(&new_bullet, (*stack));
 
 		(*stack) = new_bullet;		
-	}
-
-	//while ((*stack) != nullptr) {
-	//	moveAcrossScreen(50, contadora); printf("%d", getX(*stack));
-	//	contadora++;
-	//	(*stack) = getNextBullet((*stack));
-	//}
-
-
-		
+	}	
 }
 
 Bullet shootBullet(Bullet* stack, int x, int y)
