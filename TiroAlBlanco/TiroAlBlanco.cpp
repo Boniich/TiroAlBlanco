@@ -80,12 +80,11 @@ int main()
         if (used_bullets != nullptr) {
 
             if (isBulletOut(used_bullets)) {
-                moveBullet(&used_bullets);
-
-                isTargetImpact(used_bullets, target);
+                destroyBullet(&used_bullets);
             }
             else {
-                destroyBullet(&used_bullets);
+                moveBullet(&used_bullets);
+                isTargetImpact(used_bullets, target);
             }
             
         }
