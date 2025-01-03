@@ -26,7 +26,7 @@ void moveBullet(Bullet* bullet) {
 }
 
 bool isBulletOut(Bullet bullet) {
-	if (getY(bullet) > 4) return true;
+	if (getY(bullet) <= 4) return true;
 	return false;
 }
 
@@ -45,6 +45,5 @@ void destroyBullet(Bullet* bullet) {
 	moveAcrossScreen(getX((*bullet)), getY((*bullet))); printf(" ");
 	Bullet temp = (*bullet);
 	(*bullet) = getNextBullet((*bullet));
-
-	delete temp;
+	destroy(temp);
 }
