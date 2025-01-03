@@ -128,9 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game\game_scenes\limits\limits.cpp" />
-    <ClCompile Include="game\game_scenes\player\gun\bullet\bullet.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\charger\bullet\bullet.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.cpp" />
+    <ClCompile Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\gun.cpp" />
     <ClCompile Include="game\game_scenes\target\target.cpp" />
     <ClCompile Include="game\helpers\disable_mouse_input\disable_mouse_input.cpp" />
@@ -140,9 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\game_scenes\limits\limits.h" />
-    <ClInclude Include="game\game_scenes\player\gun\bullet\bullet.h" />
     <ClInclude Include="game\game_scenes\player\gun\charger\bullet\bullet.h" />
     <ClInclude Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.h" />
+    <ClInclude Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.h" />
     <ClInclude Include="game\game_scenes\player\gun\gun.h" />
     <ClInclude Include="game\game_scenes\target\target.h" />
     <ClInclude Include="game\helpers\disable_mouse_input\disable_mouse_input.h" />

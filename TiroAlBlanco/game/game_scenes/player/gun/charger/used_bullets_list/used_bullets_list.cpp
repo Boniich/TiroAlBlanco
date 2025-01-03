@@ -20,7 +20,6 @@ void recollectUsedBullet(Bullet* list, Bullet bullet) {
 }
 
 void moveBullet(Bullet* bullet) {
-	moveAcrossScreen(50, 20); printf("%d", getY((*bullet)));
 	moveAcrossScreen(getX((*bullet)), getY((*bullet))); printf(" ");
 	setY((*bullet), getY((*bullet))-1);
 	moveAcrossScreen(getX((*bullet)), getY((*bullet))); printf("*");

@@ -33,10 +33,16 @@
     <ClCompile Include="game\game_scenes\target\target.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="game\game_scenes\player\gun\bullet\bullet.cpp">
+    <ClCompile Include="game\helpers\disable_mouse_input\disable_mouse_input.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="game\helpers\disable_mouse_input\disable_mouse_input.cpp">
+    <ClCompile Include="game\game_scenes\player\gun\charger\bullet\bullet.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,10 +62,16 @@
     <ClInclude Include="game\game_scenes\target\target.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="game\game_scenes\player\gun\bullet\bullet.h">
+    <ClInclude Include="game\helpers\disable_mouse_input\disable_mouse_input.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="game\helpers\disable_mouse_input\disable_mouse_input.h">
+    <ClInclude Include="game\game_scenes\player\gun\charger\bullet\bullet.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
