@@ -37,5 +37,11 @@ bool isStackEmpty(Bullet stack) {
 }
 
 int getAmountBullet(Bullet stack) {
-	return 0;
+
+	int counter = 0;
+	while (stack != nullptr) {
+		counter++;
+		stack = getNextBullet(stack);
+	}
+	return counter;
 }

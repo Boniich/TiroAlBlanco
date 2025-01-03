@@ -7,7 +7,8 @@
 #include "game/game_scenes/limits/limits.h"
 #include "game/game_scenes/player/gun/gun.h"
 #include "game/game_scenes/target/target.h"
-#include "game/game_scenes/player/gun/bullet/bullet.h"
+//#include "game/game_scenes/player/gun/bullet/bullet.h"
+#include "game/game_scenes/player/gun/charger/charger_stack/charger_stack.h"
 
 /*
  First version of game Tiro al blanco
@@ -16,8 +17,9 @@
 
 int main()
 {
-    hideCursor();
     disableMouseInput();
+    hideCursor();
+    
  
     printLimits();
 
@@ -69,29 +71,32 @@ int main()
                 //moveAcrossScreen(10, 0); printf("%d",key);
                 if (!isStackEmpty(stack)) {
                     Bullet b = shootBullet(&stack, getX(gun) + 1, getY(gun) - 3);
+                    moveAcrossScreen(50, 20); printf("%d", getX(b));
 
-                    moveAcrossScreen(10, 2); printf("%d", getAmountBullet(stack));
                     if (getAmountBullet(stack) == 0) {
                         moveAcrossScreen(10, 2); printf("No hay mas balas");
                     }
+                    else {
+                        moveAcrossScreen(10, 2); printf("%d", getAmountBullet(stack));
+                    }
 
-                    recollectUsedBullet(&used_bullets, b);
+                   // recollectUsedBullet(&used_bullets, b);
                 }
             }
         }
 
-        if (used_bullets != nullptr) {
+        //if (used_bullets != nullptr) {
 
-            if (isBulletOut(used_bullets)) {
-                moveBullet(&used_bullets);
+        //    if (isBulletOut(used_bullets)) {
+        //        moveBullet(&used_bullets);
 
-                isTargetImpact(used_bullets, target);
-            }
-            else {
-                destroyBullet(&used_bullets);
-            }
-            
-        }
+        //        isTargetImpact(used_bullets, target);
+        //    }
+        //    else {
+        //        destroyBullet(&used_bullets);
+        //    }
+        //    
+        //}
 
 
     }
