@@ -11,6 +11,11 @@ Bullet create() {
 	Bullet new_bullet = new BulletTDA;
 	return new_bullet;
 }
+
+void destroy(Bullet bullet) {
+	delete bullet;
+}
+
 int getX(Bullet bullet) {
 	return bullet->x;
 }

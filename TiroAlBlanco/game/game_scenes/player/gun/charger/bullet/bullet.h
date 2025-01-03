@@ -3,6 +3,7 @@ struct BulletTDA;
 typedef struct BulletTDA* Bullet;
 
 Bullet create();
+void destroy(Bullet bullet);
 int getX(Bullet bullet);
 void setX(Bullet bullet, const int x);
 int getY(Bullet bullet);
