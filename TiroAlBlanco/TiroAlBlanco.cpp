@@ -9,6 +9,7 @@
 #include "game/game_scenes/target/target.h"
 #include "game/game_scenes/player/gun/charger/charger_stack/charger_stack.h"
 #include "game/game_scenes/player/gun/charger/used_bullets_list/used_bullets_list.h"
+#include "game/systems/goal_system/goal_system.h"
 
 /*
  First version of game Tiro al blanco
@@ -25,6 +26,7 @@ int main()
 
     Target target = create(50.0f, 5, 4, true, 10.0f, 3.0f,73.0f);
     Gun gun = create(50, 19,3,73);
+    Goal goal = create(30, 10);
 
     //Test
     Bullet stack = nullptr;
@@ -32,6 +34,7 @@ int main()
     loadBullets(&stack,5);
 
     moveAcrossScreen(10, 2); printf("%d",getAmountBullet(stack));
+    moveAcrossScreen(70, 2); printf("%d/%d", getAccumulatedPoints(goal), getGoal(goal));
 
     printfTarget(target);
     addAtInitialPosition(gun);
@@ -84,12 +87,18 @@ int main()
             }
             else {
                 moveBullet(&used_bullets);
-                isTargetImpact(used_bullets, target);
+                if (isTargetImpact(used_bullets, target)) {
+                    incressPoints(goal);
+                    moveAcrossScreen(70, 2); printf("%d/%d", getAccumulatedPoints(goal), getGoal(goal));
+                }
+
             }
             
         }
 
-
+        if (archivedGoal(goal)) {
+            moveAcrossScreen(20, 30); printf("Nivel terminado");
+        }
     }
  
     Sleep(1000);

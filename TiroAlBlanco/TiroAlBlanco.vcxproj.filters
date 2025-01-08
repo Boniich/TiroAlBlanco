@@ -45,6 +45,9 @@
     <ClCompile Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="game\systems\goal_system\goal_system.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h">
@@ -72,6 +75,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\systems\goal_system\goal_system.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
