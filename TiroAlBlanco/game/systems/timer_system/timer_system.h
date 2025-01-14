@@ -10,3 +10,4 @@ void runTimer(Timer timer, std::atomic<bool>& ends_game_timer);
 bool isTimerEnd(const Timer timer);
 int getMinutes(const Timer timer);
 int getSeconds(const Timer timer);
+void resetTimer(Timer timer, const int seconds);

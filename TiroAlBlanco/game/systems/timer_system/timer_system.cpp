@@ -48,3 +48,8 @@ int getMinutes(const Timer timer) {
 int getSeconds(const Timer timer) {
 	return timer->seconds;
 }
+
+void resetTimer(Timer timer, const int seconds) {
+	timer->minutes = 00;
+	timer->seconds = seconds;
+}
