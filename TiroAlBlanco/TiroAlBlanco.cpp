@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
+#include <thread>
+#include <atomic>
 #include "game/helpers/move_across_screen/move_across_screen.h"
 #include "game/helpers/disable_mouse_input/disable_mouse_input.h"
 #include "game/helpers/hide_cursor/hide_cursor.h"
@@ -10,6 +12,7 @@
 #include "game/game_scenes/player/gun/charger/charger_stack/charger_stack.h"
 #include "game/game_scenes/player/gun/charger/used_bullets_list/used_bullets_list.h"
 #include "game/systems/goal_system/goal_system.h"
+#include "game/systems/timer_system/timer_system.h"
 
 /*
  First version of game Tiro al blanco
@@ -23,10 +26,12 @@ int main()
     
  
     printLimits();
+    std::atomic<bool> temporizadorTerminado(false);
 
     Target target = create(50.0f, 5, 4, true, 10.0f, 3.0f,73.0f);
     Gun gun = create(50, 19,3,73);
     Goal goal = create(30, 10);
+    Timer game_timer = createTimer(30);
 
     //Test
     Bullet stack = nullptr;
@@ -35,15 +40,20 @@ int main()
 
     moveAcrossScreen(10, 2); printf("%d",getAmountBullet(stack));
     moveAcrossScreen(70, 2); printf("%d/%d", getAccumulatedPoints(goal), getGoal(goal));
+    moveAcrossScreen(35, 2); printf("Time: %.2d:%.2d ", getMinutes(game_timer), getSeconds(game_timer));
 
     printfTarget(target);
     addAtInitialPosition(gun);
 
+    std::thread temporizadorHilo(runTimer,game_timer,std::ref(temporizadorTerminado));
 
-    while (true) {
 
-       moveTarget(target);
+    while (!temporizadorTerminado) {
 
+      moveAcrossScreen(35, 2); printf("Time: %.2d:%.2d ", getMinutes(game_timer), getSeconds(game_timer));
+
+      moveTarget(target);
+       
         if (_kbhit()) {
             int key = _getch();
             moveAcrossScreen(10, 0); printf("%d", key);
@@ -99,9 +109,14 @@ int main()
         if (archivedGoal(goal)) {
             moveAcrossScreen(20, 30); printf("Nivel terminado");
         }
+
+
     }
- 
-    Sleep(1000);
+
+    // Esperar a que el hilo termine antes de salir
+    if (temporizadorHilo.joinable()) {
+        temporizadorHilo.join();
+    }
 
     return 0;
 }

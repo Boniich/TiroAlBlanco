@@ -137,6 +137,7 @@
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
     <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp" />
     <ClCompile Include="game\systems\goal_system\goal_system.cpp" />
+    <ClCompile Include="game\systems\timer_system\timer_system.cpp" />
     <ClCompile Include="TiroAlBlanco.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h" />
     <ClInclude Include="game\systems\goal_system\goal_system.h" />
+    <ClInclude Include="game\systems\timer_system\timer_system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
