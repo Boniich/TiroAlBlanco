@@ -2,7 +2,6 @@
 #include <chrono>
 #include <thread>
 #include <atomic>
-#include "../../helpers/move_across_screen/move_across_screen.h"
 
 struct TimerSystemTDA {
 	int minutes;
