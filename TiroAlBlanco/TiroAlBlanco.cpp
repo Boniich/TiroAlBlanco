@@ -58,7 +58,6 @@ int main()
        
         if (_kbhit()) {
             int key = _getch();
-            moveAcrossScreen(10, 0); printf("%d", key);
             if (key == 0 || key == 224) {
                 int second_key = _getch();
 
@@ -127,10 +126,6 @@ int main()
         if (archivedGoal(goal)) {
             moveAcrossScreen(20, 30); printf("Nivel terminado");
         }
-
-
-
-
     }
 
     // Esperar a que el hilo termine antes de salir
