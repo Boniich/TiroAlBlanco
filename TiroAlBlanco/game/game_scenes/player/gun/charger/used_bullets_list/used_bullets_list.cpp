@@ -33,11 +33,8 @@ bool isBulletOut(Bullet bullet) {
 bool isTargetImpact(Bullet bullet, Target target) {
 
 	if ((getX(bullet) >= getX(target) && getX(bullet) < getX(target) + 4) && getY(target) == getY(bullet)) {
-		moveAcrossScreen(50, 25); printf("               ");
-		moveAcrossScreen(50, 25); printf("hubo impacto");
 		return true;
 	}
-	moveAcrossScreen(50, 25); printf("NO hubo impacto");
 	return false;
 }
 
