@@ -7,6 +7,7 @@
 void startMenu() {
     bool endGame = false;
     int opcion;
+    std::string name;
 
 
     printLimits();
@@ -27,10 +28,17 @@ void startMenu() {
             {
             case 1:
                 system("cls");
-                std::cout << "Jugar";
+                moveAcrossScreen(35, 5); printf("TIRO AL BLANCO");
+                printLimits();
+                moveAcrossScreen(10, 10); printf("Introduce tu nombre: ");
+                std::cin >> name;
+                //Jugamos el juego
+
                 break;
             case 2:
                 system("cls");
+                
+
                 std::cout << "Historial" << std::endl;
                 break;
             case 3:
