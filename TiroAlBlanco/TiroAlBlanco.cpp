@@ -1,19 +1,19 @@
-#include <iostream>
-#include <Windows.h>
-#include <conio.h>
-#include <thread>
-#include <atomic>
-#include "game/helpers/move_across_screen/move_across_screen.h"
-#include "game/helpers/disable_mouse_input/disable_mouse_input.h"
-#include "game/helpers/hide_cursor/hide_cursor.h"
-#include "game/game_scenes/limits/limits.h"
-#include "game/game_scenes/player/gun/gun.h"
-#include "game/game_scenes/target/target.h"
-#include "game/game_scenes/player/gun/charger/charger_stack/charger_stack.h"
-#include "game/game_scenes/player/gun/charger/used_bullets_list/used_bullets_list.h"
-#include "game/systems/goal_system/goal_system.h"
-#include "game/systems/timer_system/timer_system.h"
-
+//#include <iostream>
+//#include <Windows.h>
+//#include <conio.h>
+//#include <thread>
+//#include <atomic>
+//#include "game/helpers/move_across_screen/move_across_screen.h"
+//#include "game/helpers/disable_mouse_input/disable_mouse_input.h"
+//#include "game/helpers/hide_cursor/hide_cursor.h"
+//#include "game/game_scenes/limits/limits.h"
+//#include "game/game_scenes/player/gun/gun.h"
+//#include "game/game_scenes/target/target.h"
+//#include "game/game_scenes/player/gun/charger/charger_stack/charger_stack.h"
+//#include "game/game_scenes/player/gun/charger/used_bullets_list/used_bullets_list.h"
+//#include "game/systems/goal_system/goal_system.h"
+//#include "game/systems/timer_system/timer_system.h"
+//
 #include "game/menu/main_menu/main_menu.h"
 
 /*

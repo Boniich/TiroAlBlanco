@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game\core_game\play_game\play_game.cpp" />
     <ClCompile Include="game\game_scenes\limits\limits.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\charger\bullet\bullet.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.cpp" />
@@ -137,12 +138,12 @@
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
     <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp" />
     <ClCompile Include="game\menu\main_menu\main_menu.cpp" />
-    <ClCompile Include="game\nivels\nivel1.cpp" />
     <ClCompile Include="game\systems\goal_system\goal_system.cpp" />
     <ClCompile Include="game\systems\timer_system\timer_system.cpp" />
     <ClCompile Include="TiroAlBlanco.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game\core_game\play_game\play_game.h" />
     <ClInclude Include="game\game_scenes\limits\limits.h" />
     <ClInclude Include="game\game_scenes\player\gun\charger\bullet\bullet.h" />
     <ClInclude Include="game\game_scenes\player\gun\charger\charger_stack\charger_stack.h" />
@@ -153,7 +154,6 @@
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h" />
     <ClInclude Include="game\menu\main_menu\main_menu.h" />
-    <ClInclude Include="game\nivels\nivel1.h" />
     <ClInclude Include="game\systems\goal_system\goal_system.h" />
     <ClInclude Include="game\systems\timer_system\timer_system.h" />
   </ItemGroup>

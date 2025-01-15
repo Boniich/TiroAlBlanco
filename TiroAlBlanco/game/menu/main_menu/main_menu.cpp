@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../../helpers/move_across_screen/move_across_screen.h"
 #include "../../game_scenes/limits/limits.h"
+#include "../../core_game/play_game/play_game.h"
 
 void startMenu() {
     bool endGame = false;
@@ -32,7 +33,9 @@ void startMenu() {
                 printLimits();
                 moveAcrossScreen(10, 10); printf("Introduce tu nombre: ");
                 std::cin >> name;
-                //Jugamos el juego
+
+                system("cls");
+                playGame();
 
                 break;
             case 2:
