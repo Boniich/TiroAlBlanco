@@ -54,6 +54,18 @@
     <ClCompile Include="game\menu\main_menu\main_menu.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="game\core_game\play_game\play_game.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="game\helpers\error_msg\error_msg.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="game\menu\win_loss_sub_menu\win_loss_sub_menu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="game\helpers\win_loss_feeback\win_loss_feedback.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h">
@@ -90,6 +102,18 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="game\menu\main_menu\main_menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\core_game\play_game\play_game.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\helpers\error_msg\error_msg.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\menu\win_loss_sub_menu\win_loss_sub_menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\helpers\win_loss_feeback\win_loss_feedback.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

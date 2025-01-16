@@ -4,11 +4,13 @@
 #include "../../helpers/move_across_screen/move_across_screen.h"
 #include "../../game_scenes/limits/limits.h"
 #include "../../core_game/play_game/play_game.h"
+#include "../../helpers/error_msg/error_msg.h"
+#include "../../menu/win_loss_sub_menu/win_loss_sub_menu.h"
+#include "../../helpers/ask_name/ask_name.h"
 
 void startMenu() {
     bool endGame = false;
     int opcion;
-    std::string name;
     bool play_again = false;
 
 
@@ -29,68 +31,11 @@ void startMenu() {
             switch (opcion)
             {
             case 1:
-                system("cls");
-                moveAcrossScreen(35, 5); printf("TIRO AL BLANCO");
-                printLimits();
-                moveAcrossScreen(10, 10); printf("Introduce tu nombre: ");
-                std::cin >> name;
-
-                system("cls");
-
-                do {
-                    if (playGame()) {
-                        system("cls");
-                        printLimits();
-                        moveAcrossScreen(35, 5); printf("JUEGO TERMINADO");
-                        moveAcrossScreen(25, 6); printf("Felicitaciones! Has completado el juego");
-
-
-                        moveAcrossScreen(10, 8); printf("--- Menu --- ");
-                        moveAcrossScreen(10, 9); printf("1- Jugar de nuevo ");
-                        moveAcrossScreen(10, 10); printf("2- Volver al menus principal ");
-                        moveAcrossScreen(10, 12); printf("Selecciona una opcion: ");
-                        if (std::cin >> opcion) {
-                            bool opcionSeleccionada = false;
-                            do {
-                                
-                                switch (opcion)
-                                {
-                                case 1:
-                                    play_again = true;
-                                    break;
-                                case 2:
-                                    play_again = false;
-                                    break;
-
-                                default:
-                                    opcionSeleccionada = true;
-                                    break;
-                                }
-
-                            } while (opcionSeleccionada);
-
- 
-                        }
-
-                    }
-                    else {
-                        system("cls");
-                        printLimits();
-                        moveAcrossScreen(35, 5); printf("GAME OVER");
-                        moveAcrossScreen(25, 6); printf("No pudiste superar el reto. Vuelve a intentarlo");
-                    }
-                    system("cls");
-                } while (play_again);
-
-
-
-
-      
+                askName();
+                showWinLossScreenWithSubMenu();
                 break;
             case 2:
                 system("cls");
-                
-
                 std::cout << "Historial" << std::endl;
                 break;
             case 3:
@@ -98,29 +43,16 @@ void startMenu() {
                 endGame = true;
                 break;
             default:
-                moveAcrossScreen(10, 12); printf("--------------------------------------------");
-                moveAcrossScreen(10, 13); printf("La opcion no es valida. Vuelve a intentarlo ");
-                moveAcrossScreen(10, 14); printf("-------------------------------------------");
-
+                showError("La opcion no es valida. Vuelve a intentarlo");
                 Sleep(3000);
-                moveAcrossScreen(10, 12); printf("                                            ");
-                moveAcrossScreen(10, 13); printf("                                            ");
-                moveAcrossScreen(10, 14); printf("                                            ");
+                cleanError();
                 break;
             }
         }
         else {
-            moveAcrossScreen(10, 12); printf("---------------------------------------");
-            moveAcrossScreen(10, 13); printf("Error: se ingreso un caracter no valido");
-            moveAcrossScreen(10, 14); printf("---------------------------------------");
-            std::cin.clear();
-            std::cin.ignore();
-
+            showError("Error: se ingreso un caracter no valido");
             Sleep(3000);
-
-            moveAcrossScreen(10, 12); printf("                                       ");
-            moveAcrossScreen(10, 13); printf("                                       ");
-            moveAcrossScreen(10, 14); printf("                                       ");
+            cleanError();
         }
 
 
