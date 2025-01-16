@@ -9,6 +9,7 @@ void startMenu() {
     bool endGame = false;
     int opcion;
     std::string name;
+    bool play_again = false;
 
 
     printLimits();
@@ -35,8 +36,56 @@ void startMenu() {
                 std::cin >> name;
 
                 system("cls");
-                playGame();
 
+                do {
+                    if (playGame()) {
+                        system("cls");
+                        printLimits();
+                        moveAcrossScreen(35, 5); printf("JUEGO TERMINADO");
+                        moveAcrossScreen(25, 6); printf("Felicitaciones! Has completado el juego");
+
+
+                        moveAcrossScreen(10, 8); printf("--- Menu --- ");
+                        moveAcrossScreen(10, 9); printf("1- Jugar de nuevo ");
+                        moveAcrossScreen(10, 10); printf("2- Volver al menus principal ");
+                        moveAcrossScreen(10, 12); printf("Selecciona una opcion: ");
+                        if (std::cin >> opcion) {
+                            bool opcionSeleccionada = false;
+                            do {
+                                
+                                switch (opcion)
+                                {
+                                case 1:
+                                    play_again = true;
+                                    break;
+                                case 2:
+                                    play_again = false;
+                                    break;
+
+                                default:
+                                    opcionSeleccionada = true;
+                                    break;
+                                }
+
+                            } while (opcionSeleccionada);
+
+ 
+                        }
+
+                    }
+                    else {
+                        system("cls");
+                        printLimits();
+                        moveAcrossScreen(35, 5); printf("GAME OVER");
+                        moveAcrossScreen(25, 6); printf("No pudiste superar el reto. Vuelve a intentarlo");
+                    }
+                    system("cls");
+                } while (play_again);
+
+
+
+
+      
                 break;
             case 2:
                 system("cls");

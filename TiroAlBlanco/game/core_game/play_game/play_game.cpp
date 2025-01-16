@@ -15,7 +15,7 @@
 #include "../../systems/goal_system/goal_system.h"
 #include "../../systems/timer_system/timer_system.h"
 
-void playGame() {
+bool playGame() {
 
 
 	disableMouseInput();
@@ -23,9 +23,11 @@ void playGame() {
 
 
 	printLimits();
+
 	std::atomic<bool> temporizadorTerminado(false);
 	std::atomic<bool> is_reload_finish(false);
 	bool recarga_activada = false;
+	bool win_game = false;
 
 	Target target = create(50.0f, 5, 4, true, 10.0f, 3.0f, 73.0f);
 	Gun gun = create(50, 19, 3, 73);
@@ -124,6 +126,7 @@ void playGame() {
 
 		if (archivedGoal(goal)) {
 			moveAcrossScreen(20, 25); printf("Nivel terminado");
+			win_game = true;
 		}
 	}
 
@@ -131,5 +134,7 @@ void playGame() {
 	if (temporizadorHilo.joinable()) {
 		temporizadorHilo.join();
 	}
+
+	return win_game;
 
 }
