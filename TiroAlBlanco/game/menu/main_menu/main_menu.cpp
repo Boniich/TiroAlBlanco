@@ -14,18 +14,18 @@ void startMenu() {
     bool play_again = false;
 
 
-    printLimits();
-
-    moveAcrossScreen(35, 5); printf("TIRO AL BLANCO");
-
-    moveAcrossScreen(10, 8); printf("--- Menu --- ");
-    moveAcrossScreen(10, 9); printf("1- Jugar ");
-    moveAcrossScreen(10, 10); printf("2- Historial ");
-    moveAcrossScreen(10, 11); printf("3- Salir");
-    
-
     do
     {
+
+        printLimits();
+
+        moveAcrossScreen(35, 5); printf("TIRO AL BLANCO");
+
+        moveAcrossScreen(10, 8); printf("--- Menu --- ");
+        moveAcrossScreen(10, 9); printf("1- Jugar ");
+        moveAcrossScreen(10, 10); printf("2- Historial ");
+        moveAcrossScreen(10, 11); printf("3- Salir");
+
         moveAcrossScreen(10, 12); printf("Selecciona una opcion: ");
         if (std::cin >> opcion) {
             switch (opcion)

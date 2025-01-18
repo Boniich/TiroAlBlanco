@@ -134,6 +134,7 @@
     <ClCompile Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.cpp" />
     <ClCompile Include="game\game_scenes\player\gun\gun.cpp" />
     <ClCompile Include="game\game_scenes\target\target.cpp" />
+    <ClCompile Include="game\helpers\ask_name\ask_name.cpp" />
     <ClCompile Include="game\helpers\disable_mouse_input\disable_mouse_input.cpp" />
     <ClCompile Include="game\helpers\hide_cursor\hide_cursor.cpp" />
     <ClCompile Include="game\helpers\move_across_screen\move_across_screen.cpp" />
@@ -153,11 +154,13 @@
     <ClInclude Include="game\game_scenes\player\gun\charger\used_bullets_list\used_bullets_list.h" />
     <ClInclude Include="game\game_scenes\player\gun\gun.h" />
     <ClInclude Include="game\game_scenes\target\target.h" />
+    <ClInclude Include="game\helpers\ask_name\ask_name.h" />
     <ClInclude Include="game\helpers\disable_mouse_input\disable_mouse_input.h" />
     <ClInclude Include="game\helpers\hide_cursor\hide_cursor.h" />
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h" />
     <ClInclude Include="game\helpers\error_msg\error_msg.h" />
     <ClInclude Include="game\helpers\win_loss_feeback\win_loss_feedback.h" />
+    <ClInclude Include="game\helpers\win_loss_feeback\win_loss_data.h" />
     <ClInclude Include="game\menu\main_menu\main_menu.h" />
     <ClInclude Include="game\menu\win_loss_sub_menu\win_loss_sub_menu.h" />
     <ClInclude Include="game\systems\goal_system\goal_system.h" />

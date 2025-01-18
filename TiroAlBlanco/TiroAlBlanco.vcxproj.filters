@@ -66,6 +66,9 @@
     <ClCompile Include="game\helpers\win_loss_feeback\win_loss_feedback.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="game\helpers\ask_name\ask_name.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\helpers\move_across_screen\move_across_screen.h">
@@ -114,6 +117,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="game\helpers\win_loss_feeback\win_loss_feedback.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\helpers\ask_name\ask_name.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game\helpers\win_loss_feeback\win_loss_data.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

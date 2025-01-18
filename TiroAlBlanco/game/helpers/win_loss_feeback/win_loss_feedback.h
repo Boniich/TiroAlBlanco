@@ -1,2 +1,3 @@
 #pragma once
-void showFeedback(const char* title, const char* sub_title);
+#include "win_loss_data.h"
+void showFeedback(const WinLossData data);
