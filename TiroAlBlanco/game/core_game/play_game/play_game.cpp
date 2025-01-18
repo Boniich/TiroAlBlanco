@@ -26,6 +26,7 @@ bool playGame() {
 
 	std::atomic<bool> temporizadorTerminado(false);
 	std::atomic<bool> is_reload_finish(false);
+	std::atomic<bool> player_win(false);
 	bool recarga_activada = false;
 	bool win_game = false;
 
@@ -49,7 +50,7 @@ bool playGame() {
 
 	Sleep(3000);
 
-	std::thread temporizadorHilo(runTimer, game_timer, std::ref(temporizadorTerminado));
+	std::thread temporizadorHilo(runTimer, game_timer, std::ref(temporizadorTerminado), goal);
 
 	while (!temporizadorTerminado) {
 
@@ -90,7 +91,7 @@ bool playGame() {
 		if (getAmountBullet(stack) == 0) {
 			moveAcrossScreen(10, 2); printf("Recargando... (%d s)", getSeconds(reload_gun));
 			if (!recarga_activada) {
-				std::thread reload_gun_thread(runTimer, reload_gun, std::ref(is_reload_finish));
+				std::thread reload_gun_thread(runTimer, reload_gun, std::ref(is_reload_finish),goal);
 				recarga_activada = true;
 				reload_gun_thread.detach();
 			}
@@ -125,7 +126,7 @@ bool playGame() {
 		}
 
 		if (archivedGoal(goal)) {
-			moveAcrossScreen(20, 25); printf("Nivel terminado");
+			temporizadorTerminado = true;
 			win_game = true;
 		}
 	}

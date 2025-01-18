@@ -25,9 +25,11 @@ Timer createTimer(int seconds) {
 void destroy(Timer timer) {
 	delete timer;
 }
-void runTimer(Timer timer,std::atomic<bool>& ends_game_timer) {
+void runTimer(Timer timer,std::atomic<bool>& ends_game_timer, Goal main_goal) {
 
-	while (!ends_game_timer) {
+	bool goal_success = false;
+
+	while (!ends_game_timer && !goal_success) {
 		if (timer->minutes == 1) {
 			timer->minutes = 00;
 			timer->seconds = 59;
@@ -37,6 +39,7 @@ void runTimer(Timer timer,std::atomic<bool>& ends_game_timer) {
 		}
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		ends_game_timer = isTimerEnd(timer);
+		goal_success = archivedGoal(main_goal);
 	}
 }
 bool isTimerEnd(const Timer timer) {
