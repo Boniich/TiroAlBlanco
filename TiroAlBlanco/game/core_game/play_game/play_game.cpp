@@ -26,7 +26,6 @@ bool playGame() {
 
 	std::atomic<bool> temporizadorTerminado(false);
 	std::atomic<bool> is_reload_finish(false);
-	std::atomic<bool> player_win(false);
 	bool recarga_activada = false;
 	bool win_game = false;
 
